@@ -3,9 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Entertainment App API Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .endpoint {
+            background: #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .endpoint:hover {
+            background: #ccc;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border-left: 3px solid #333;
+            background: #fafafa;
+            margin: 5px 0;
+        }
+        pre {
+            background: #222;
+            color: #0f0;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Backend</h1>
+    <div class="container">
+        <h1>Entertainment App API Documentation</h1>
+        
+        <h2>User Routes</h2>
+        <div class="endpoint">POST /user/register</div>
+        <div class="content">
+            <p>Registers a new user.</p>
+            <pre>{ "name": "John Doe", "email": "john@example.com", "password": "123456" }</pre>
+        </div>
+        
+        <div class="endpoint">POST /user/login</div>
+        <div class="content">
+            <p>Logs in an existing user.</p>
+            <pre>{ "email": "john@example.com", "password": "123456" }</pre>
+        </div>
+        
+        <div class="endpoint">GET /user/profile</div>
+        <div class="content">
+            <p>Retrieves the authenticated user profile.</p>
+        </div>
+        
+        <h2>Media Routes</h2>
+        <div class="endpoint">GET /media/trending/:page</div>
+        <div class="content">
+            <p>Gets trending media for the given page.</p>
+        </div>
+        
+        <div class="endpoint">GET /media/movie/:page</div>
+        <div class="content">
+            <p>Retrieves a list of movies.</p>
+        </div>
+        
+        <div class="endpoint">GET /media/tv/:page</div>
+        <div class="content">
+            <p>Retrieves a list of TV shows.</p>
+        </div>
+        
+        <h2>Bookmark Routes</h2>
+        <div class="endpoint">POST /media/bookmark/add</div>
+        <div class="content">
+            <p>Adds a media item to bookmarks.</p>
+        </div>
+        
+        <div class="endpoint">DELETE /media/bookmark/delete/:id</div>
+        <div class="content">
+            <p>Deletes a bookmarked media item.</p>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.endpoint').forEach(item => {
+            item.addEventListener('click', () => {
+                let content = item.nextElementSibling;
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
 </body>
 </html>
