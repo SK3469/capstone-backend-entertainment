@@ -56,18 +56,22 @@
         <div class="endpoint">POST /user/register</div>
         <div class="content">
             <p>Registers a new user.</p>
-            <pre>{ "name": "John Doe", "email": "john@example.com", "password": "123456" }</pre>
         </div>
-        
         <div class="endpoint">POST /user/login</div>
         <div class="content">
             <p>Logs in an existing user.</p>
-            <pre>{ "email": "john@example.com", "password": "123456" }</pre>
         </div>
-        
+        <div class="endpoint">GET /user/logout</div>
+        <div class="content">
+            <p>Logs out the current user.</p>
+        </div>
         <div class="endpoint">GET /user/profile</div>
         <div class="content">
             <p>Retrieves the authenticated user profile.</p>
+        </div>
+        <div class="endpoint">GET /user/:id</div>
+        <div class="content">
+            <p>Gets a user by ID (Requires authentication).</p>
         </div>
         
         <h2>Media Routes</h2>
@@ -75,26 +79,63 @@
         <div class="content">
             <p>Gets trending media for the given page.</p>
         </div>
-        
         <div class="endpoint">GET /media/movie/:page</div>
         <div class="content">
             <p>Retrieves a list of movies.</p>
         </div>
-        
         <div class="endpoint">GET /media/tv/:page</div>
         <div class="content">
             <p>Retrieves a list of TV shows.</p>
         </div>
+        <div class="endpoint">GET /media/movie/image/:movieId</div>
+        <div class="content">
+            <p>Gets the thumbnail image for a movie.</p>
+        </div>
+        <div class="endpoint">GET /media/tv/image/:seriesId</div>
+        <div class="content">
+            <p>Gets the thumbnail image for a TV show.</p>
+        </div>
+        <div class="endpoint">GET /media/movie/detail/:movieId</div>
+        <div class="content">
+            <p>Retrieves detailed information about a movie.</p>
+        </div>
+        <div class="endpoint">GET /media/tv/detail/:seriesId</div>
+        <div class="content">
+            <p>Retrieves detailed information about a TV show.</p>
+        </div>
+        <div class="endpoint">GET /media/movie/search/:searchQuery</div>
+        <div class="content">
+            <p>Searches for movies.</p>
+        </div>
+        <div class="endpoint">GET /media/tv/search/:searchQuery</div>
+        <div class="content">
+            <p>Searches for TV shows.</p>
+        </div>
+        <div class="endpoint">GET /media/all/search/:searchQuery</div>
+        <div class="content">
+            <p>Searches for all media types.</p>
+        </div>
         
         <h2>Bookmark Routes</h2>
+        <div class="endpoint">GET /media/bookmark/check/:id</div>
+        <div class="content">
+            <p>Checks if a media item is bookmarked.</p>
+        </div>
         <div class="endpoint">POST /media/bookmark/add</div>
         <div class="content">
             <p>Adds a media item to bookmarks.</p>
         </div>
-        
         <div class="endpoint">DELETE /media/bookmark/delete/:id</div>
         <div class="content">
             <p>Deletes a bookmarked media item.</p>
+        </div>
+        <div class="endpoint">GET /media/bookmark/get</div>
+        <div class="content">
+            <p>Retrieves all bookmarked media items.</p>
+        </div>
+        <div class="endpoint">GET /media/bookmark/search/:searchQuery</div>
+        <div class="content">
+            <p>Searches for bookmarked media items.</p>
         </div>
     </div>
 
