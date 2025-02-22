@@ -2,9 +2,12 @@
 const dotenv = require('dotenv');
 const mongoose = require('mongoose')
 const { app } = require('./src/app.js')
+const path = require("path")
 
 // env configuration 
 dotenv.config();
+const staticPath = path.join(__dirname, "../public");
+app.use("/", express.static(staticPath));
 
 // mongodb connection 
 mongoose.connect(process.env.MONGODB_URI,
